@@ -4,23 +4,23 @@ public class Arrays {
 
     static void Assignment1() {
 
-        int [] myArray = {5, 3, 7, 6, 2, 8};
+        int[] myArray = {5, 3, 7, 6, 2, 8};
 
         System.out.println("For loop:");
-        for (int i = 0; i < myArray.length; i ++) {
-            System.out.println(myArray[i]);
+        for (int j : myArray) {
+            System.out.println(j);
         }
 
         System.out.println("For each loop:");
-        for (int num:myArray) {
+        for (int num : myArray) {
             System.out.println(num);
         }
 
         System.out.println("While loop:");
         int i = 0;
         while (i < myArray.length) {
-        System.out.println(myArray[i]);
-        i++;
+            System.out.println(myArray[i]);
+            i++;
         }
 
         System.out.println("Do while loop:");
@@ -39,22 +39,22 @@ public class Arrays {
         int[] myArray = {10, 4, -4, 7, 0, 9, 1, 3, 7, -5};
 
         System.out.println("Negative values: ");
-        for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] < 0) {
-                System.out.println(myArray[i]);
+        for (int j : myArray) {
+            if (j < 0) {
+                System.out.println(j);
             }
         }
 
         System.out.println("Odd values: ");
-        for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] % 2 != 0) {
-                System.out.println(myArray[i]);
+        for (int j : myArray) {
+            if (j % 2 != 0) {
+                System.out.println(j);
             }
         }
 
         System.out.println("How many elements are odd: ");
 
-        
+
         System.out.println("Same value: ");
 
 
@@ -64,12 +64,10 @@ public class Arrays {
         }
 
         System.out.println("Average value of the array: ");
-
         double total = 0;
-        for(int i=0; i < myArray.length; i++){
-            total = total + myArray[i];
-        }
-        double average = total/ myArray.length;
+        for (int j : myArray)
+            total = total + j;
+        double average = total / myArray.length;
         System.out.println(average);
 
         System.out.println("How many elements are smaller than average value: ");
