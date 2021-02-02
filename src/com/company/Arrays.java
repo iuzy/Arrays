@@ -53,31 +53,45 @@ public class Arrays {
         }
 
         System.out.println("How many elements are odd: ");
+        int odd = 0;
+        for (int j : myArray) {
+            if (j % 2 != 0) {
+                odd++;
+            }
+        }
+        System.out.println(odd);
 
-
-        System.out.println("Same value: ");
-
+        System.out.println("These elements have the same value: ");
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = i + 1; j < myArray.length; j++) {
+                if (myArray[i] == (myArray[j])) {
+                    System.out.println(myArray[i]);
+                }
+            }
+        }
 
         System.out.println("Each second element: ");
-        for (int i = 0; i < myArray.length; i += 2) {
+        for (int i = 1; i < myArray.length; i += 2) {
             System.out.println(myArray[i]);
         }
 
         System.out.println("Average value of the array: ");
         double total = 0;
-        for (int j : myArray)
-            total = total + j;
+        for (int k : myArray)
+            total += k;
         double average = total / myArray.length;
         System.out.println(average);
 
         System.out.println("How many elements are smaller than average value: ");
-    }
-        /*
 
-● Compute how many elements are odd (uneven).
-● Verify if there are multiple elements with the same value
-● Establish how many elements are smaller than average value.
-         */
+        int smaller = 0;
+        for (int l : myArray) {
+            if (l < average) {
+                smaller++;
+            }
+        }
+        System.out.println(smaller);
+    }
 
     public static void main(String[] args) {
 
@@ -85,4 +99,5 @@ public class Arrays {
         Assignment2();
 
     }
+
 }
