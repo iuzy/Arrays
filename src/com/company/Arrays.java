@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Arrays {
 
     static void Assignment1() {
@@ -93,10 +95,40 @@ public class Arrays {
         System.out.println(smaller);
     }
 
+    public static void Assignment3() {
+
+    }
+
+    /*
+Write a program to do multiple actions with a grade array:
+● Create a byte array with length 10. The grades will be stored in the array.
+● Use the Scanner class that allows the user to fill the array with user input data from the
+console.
+a. Do verification of the type of each input value. Input values should be as numbers.
+The function hasNextShort() can be used from the Scanner class.
+b. Do verification of the number range of each input value. Input values need to be in
+range 0 to +10.
+● Do calculations how many students failed (the grade is smaller than 4).
+● Do calculations how many students got an “A”(the grade is 10).
+● Create a histogram of number frequencies in the grade array. For example, if the grade
+array will be: 2, 5, 10, 3, 10, 7, 8, 5, 10, 6, the histogram will look as shown here:
+0 students with the grade 0
+0 students with the grade 1
+1 students with the grade 2
+1 students with the grade 3
+0 students with the grade 4
+2 students with the grade 5
+1 students with the grade 6
+1 students with the grade 7
+1 students with the grade 8
+0 students with the grade 9
+3 students with the grade 10
+     */
     public static void main(String[] args) {
 
         //Assignment1();
-        Assignment2();
+        //Assignment2();
+        Assignment3();
 
     }
 
