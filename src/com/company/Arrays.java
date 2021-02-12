@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Arrays {
 
+    static Scanner input = new Scanner(System.in);
+
     static void Assignment1() {
 
         int[] myArray = {5, 3, 7, 6, 2, 8};
@@ -26,12 +28,12 @@ public class Arrays {
         }
 
         System.out.println("Do while loop:");
-        int a = 0;
+        i = 0;
         do {
-            System.out.println(myArray[a]);
-            a++;
+            System.out.println(myArray[i]);
+            i++;
 
-        } while (a < myArray.length);
+        } while (i < myArray.length);
 
         System.out.println(" For each is the best to print out each! :) ");
     }
@@ -95,35 +97,59 @@ public class Arrays {
         System.out.println(smaller);
     }
 
-    public static void Assignment3() {
+    static void Assignment3() {
 
+        byte[] array = new byte[10];
+
+        System.out.println("Please enter ten numbers (0 - 10): ");
+
+        for (int i = 0; i < array.length; i++) {
+
+            while (!input.hasNextByte()) {
+                System.out.println("This is not a number!");
+                input.next();
+            }
+
+            byte grade = input.nextByte();
+            if (grade < 0 || grade > 10) {
+                i--;
+                System.out.println("Invalid value!");
+            } else {
+                array[i] = grade;
+            }
+        }
+
+        //how many students failed
+        int fail = 0;
+        for (int i : array) {
+            if (i < 4) {
+                fail++;
+            }
+        }
+        System.out.println("Number of students that failed: " + fail);
+
+        //how many got an A
+        int a = 0;
+        for (int i : array) {
+            if (i == 10) {
+                a++;
+            }
+        }
+        System.out.println("This is how many students excelled: " + a);
+
+        //histogram
+        System.out.println("Histogram: ");
+        byte[] count = new byte[11];
+        int i;
+        for (i = 0; i < array.length; i++) {
+            int temp = array[i];
+            count[temp]++;
+        }
+        for (i = 0; i < count.length; i++) {
+            System.out.println(count[i] + " students with grade " + i);
+        }
     }
 
-    /*
-Write a program to do multiple actions with a grade array:
-● Create a byte array with length 10. The grades will be stored in the array.
-● Use the Scanner class that allows the user to fill the array with user input data from the
-console.
-a. Do verification of the type of each input value. Input values should be as numbers.
-The function hasNextShort() can be used from the Scanner class.
-b. Do verification of the number range of each input value. Input values need to be in
-range 0 to +10.
-● Do calculations how many students failed (the grade is smaller than 4).
-● Do calculations how many students got an “A”(the grade is 10).
-● Create a histogram of number frequencies in the grade array. For example, if the grade
-array will be: 2, 5, 10, 3, 10, 7, 8, 5, 10, 6, the histogram will look as shown here:
-0 students with the grade 0
-0 students with the grade 1
-1 students with the grade 2
-1 students with the grade 3
-0 students with the grade 4
-2 students with the grade 5
-1 students with the grade 6
-1 students with the grade 7
-1 students with the grade 8
-0 students with the grade 9
-3 students with the grade 10
-     */
     public static void main(String[] args) {
 
         //Assignment1();
